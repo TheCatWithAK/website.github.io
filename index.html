@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaoRan Qi</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Sidebar */
+    nav.sidebar {
+      width: 150px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    nav.sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+    }
+
+    nav.sidebar a:hover {
+      background-color: #555;
+    }
+
+    /* Main content */
+    main {
+      margin-left: 150px;
+      padding: 20px;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+ <nav class="sidebar">
+    <a href="index.html" class = "active">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="photography.html">Photography</a>
+  </nav>
+
+  <main>
+    <header>
+        <img src="download.jpg" alt="HaoRan Qi">
+        <p>Person</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Engineering Physics student at The University of British Columbia.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>List of projects goes here.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <article>
+            <h3>Title</h3>
+            <p>Date</p>
+            <ul>
+                <li>List item</li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Skills</li>
+        </ul>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:email">email</a></p>
+    </footer>
+  </main>
+
+</body>
+</html>
