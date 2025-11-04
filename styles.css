@@ -1,3 +1,4 @@
+/* ========== GLOBAL STYLES ========== */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -8,6 +9,7 @@ body {
     display: flex;
 }
 
+/* ========== SIDEBAR NAVIGATION ========== */
 nav.sidebar {
     width: 150px;
     background-color: #333;
@@ -36,12 +38,14 @@ nav.sidebar a.active {
     background-color: #555;
 }
 
+/* ========== MAIN CONTENT AREA ========== */
 main {
-    margin-left: 150px; /* leave space for sidebar */
+    margin-left: 150px;
     padding: 20px;
     flex: 1;
 }
 
+/* ========== HEADER ========== */
 header {
     background-color: #171616;
     text-align: center;
@@ -66,6 +70,7 @@ header p {
     font-size: 18px;
 }
 
+/* ========== SECTIONS ========== */
 section {
     background-color: #171616;
     padding: 20px;
@@ -74,6 +79,7 @@ section {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+/* Skills section list styling */
 #skills ul {
     list-style-type: none;
     padding: 0;
@@ -87,6 +93,7 @@ section {
     border-radius: 4px;
 }
 
+/* ========== FOOTER ========== */
 footer {
     background-color: #171616;
     text-align: center;
@@ -105,10 +112,12 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* ========== PHOTOGRAPHY GALLERY TABS ========== */
 .tabs input[type="radio"] {
   display: none;
 }
 
+/* Tabs container (sticky at top) */
 .tabs {
   position: sticky;
   top: 0;
@@ -119,6 +128,7 @@ footer a:hover {
   flex-wrap: wrap;
 }
 
+/* Individual tab labels */
 .tabs label {
   display: inline-block;
   padding: 10px 20px;
@@ -126,16 +136,18 @@ footer a:hover {
   background-color: #333;
   color: white;
   cursor: pointer;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
   font-weight: bold;
   transition: background 0.3s, transform 0.2s;
 }
 
+/* Hover effect for tabs */
 .tabs label:hover {
   background-color: #555;
   transform: translateY(-2px);
 }
 
+/* Highlight the active tab */
 #tab-all:checked + label,
 #tab-animals:checked + label,
 #tab-nature:checked + label,
@@ -145,13 +157,15 @@ footer a:hover {
   background-color: #555;
 }
 
+/* ========== TAB CONTENT ========== */
 .tab-content {
-  display: none;
+  display: none; /* Hide by default */
   background-color: #171616;
   padding: 20px;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
 }
 
+/* Show content for selected tab */
 #tab-all:checked ~ #content-all,
 #tab-animals:checked ~ #content-animals,
 #tab-nature:checked ~ #content-nature,
@@ -161,15 +175,18 @@ footer a:hover {
   display: block;
 }
 
+/* ========== GALLERY GRID ========== */
 .tab-content .gallery {
   column-count: 3;
   column-gap: 15px;
 }
 
+/* Special case for "All" tab */
 #content-all .gallery {
-  column-count: 4;
+  column-count: 4; 
 }
 
+/* Individual photo items */
 .photo-item {
   display: inline-flex;
   width: 100%;
@@ -208,12 +225,46 @@ footer a:hover {
   transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
-  .gallery {
-    column-count: 2;
+/* ========== RESPONSIVE GALLERY LAYOUT ========== */
+/* Large screens */
+@media (max-width: 2500px) {
+  .tab-content .gallery {
+    column-count: 3;
+  }
+  #content-all .gallery {
+    column-count: 4;
   }
 }
 
+/* Medium-large screens */
+@media (max-width: 1400px) {
+  .tab-content .gallery {
+    column-count: 2;
+  }
+  #content-all .gallery {
+    column-count: 3;
+  }
+}
+
+/* Tablets / small laptops */
+@media (max-width: 900px) {
+  .tab-content .gallery {
+    column-count: 2;
+  }
+  #content-all .gallery {
+    column-count: 2;
+  }
+
+  nav.sidebar {
+    width: 130px;
+  }
+
+  main {
+    margin-left: 130px;
+  }
+}
+
+/* Mobile screens */
 @media (max-width: 600px) {
   body {
     flex-direction: column;
@@ -222,27 +273,125 @@ footer a:hover {
   nav.sidebar {
     width: 100%;
     height: auto;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     flex-direction: row;
+    justify-content: space-around;
     padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 2000;
   }
 
   nav.sidebar a {
     flex: 1;
     text-align: center;
-    padding: 10px 0;
+    padding: 12px 0;
+    font-size: 15px;
+    border-bottom: none;
   }
 
   main {
     margin-left: 0;
+    margin-top: 60px;
+    padding: 15px;
   }
 
-  .gallery {
-    column-count: 1;
+  .tab-content .gallery,
+  #content-all .gallery {
+    column-count: 2;
+    column-gap: 12px;
   }
 
   .tabs label {
-    padding: 8px 12px;
+    padding: 8px 10px;
     font-size: 14px;
   }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .tab-content .gallery,
+  #content-all .gallery {
+    column-count: 1;
+  }
+
+  nav.sidebar a {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .tabs label {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+
+/* ========== INDIVIDUAL PHOTOGRAPHY PAGE STYLING ========== */
+.photo-title {
+  text-align: center;
+  color: #ffffff;
+  margin: 20px 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.photo-full {
+  width: auto;               /* Let width adjust naturally */
+  max-width: 100%;           /* Ensure it never overflows viewport width */
+  max-height: 100vh;         /* Fit vertically inside the viewport */
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+  object-fit: contain;       /* Maintain aspect ratio and fit inside box */
+}
+
+.photo-desc {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+  color: #ddd;
+}
+
+.photo-meta {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Back button styling */
+.back-link {
+    display: inline-block; 
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.photo-license {
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.photo-license a {
+  color: #6cb2eb; /* light blue link */
+  text-decoration: none;
+}
+
+.photo-license a:hover {
+  text-decoration: underline;
 }
