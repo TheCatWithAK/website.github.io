@@ -1,115 +1,140 @@
 /* ========== GLOBAL STYLES ========== */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-    background-color: #2c2b2b;
-    display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-color: #2c2b2b;
+  display: flex;
 }
 
 /* ========== SIDEBAR NAVIGATION ========== */
 nav.sidebar {
-    width: 150px;
-    background-color: #333;
-    color: white;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    z-index: 1000;
+  width: 150px;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 nav.sidebar a {
-    color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    display: block;
-    transition: background 0.3s;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: background 0.3s;
 }
 
 nav.sidebar a:hover,
 nav.sidebar a.active {
-    background-color: #555;
+  background-color: #555;
 }
 
 /* ========== MAIN CONTENT AREA ========== */
 main {
-    margin-left: 150px;
-    padding: 20px;
-    flex: 1;
+  margin-left: 150px;
+  padding: 20px;
+  flex: 1;
 }
 
 /* ========== HEADER ========== */
 header {
-    background-color: #171616;
-    text-align: center;
-    padding: 20px;
-    border-radius: 8px;
+  background-color: #171616;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 header img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 header h1 {
-    margin: 10px 0;
-    color: #ffffff;
+  margin: 10px 0;
+  color: #ffffff;
 }
 
 header p {
-    color: #ffffff;
-    font-size: 18px;
+  color: #ffffff;
+  font-size: 18px;
 }
 
 /* ========== SECTIONS ========== */
 section {
-    background-color: #171616;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: #171616;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Skills section list styling */
 #skills ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 #skills li {
-    background-color: #171616;
-    padding: 8px 12px;
-    margin: 5px;
-    display: inline-block;
-    border-radius: 4px;
+  background-color: #171616;
+  padding: 8px 12px;
+  margin: 5px;
+  display: inline-block;
+  border-radius: 4px;
 }
 
 /* ========== FOOTER ========== */
 footer {
-    background-color: #171616;
-    text-align: center;
-    padding: 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-top: 20px;
+  background-color: #171616;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+  color: #fff;
+  /* Ensures text is visible on dark background */
 }
 
 footer a {
-    color: #0066cc;
-    text-decoration: none;
+  color: #0066cc;
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* Contact Section */
+#contact {
+  margin-bottom: 20px;
+  /* Adds space between contact and license sections */
+}
+
+/* License Section */
+#license {
+  padding-top: 10px;
+  border-top: 1px solid #333;
+  /* Subtle divider line */
+  font-size: 0.9em;
+  /* Slightly smaller text for the license */
+}
+
+/* License Badge */
+#license img[alt="Creative Commons License"] {
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ========== PHOTOGRAPHY GALLERY TABS ========== */
@@ -148,30 +173,31 @@ footer a:hover {
 }
 
 /* Highlight the active tab */
-#tab-all:checked + label,
-#tab-animals:checked + label,
-#tab-nature:checked + label,
-#tab-city:checked + label,
-#tab-architecture:checked + label,
-#tab-portrait:checked + label {
+#tab-all:checked+label,
+#tab-animals:checked+label,
+#tab-nature:checked+label,
+#tab-city:checked+label,
+#tab-architecture:checked+label,
+#tab-portrait:checked+label {
   background-color: #555;
 }
 
 /* ========== TAB CONTENT ========== */
 .tab-content {
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
   background-color: #171616;
   padding: 20px;
   border-radius: 5px;
 }
 
 /* Show content for selected tab */
-#tab-all:checked ~ #content-all,
-#tab-animals:checked ~ #content-animals,
-#tab-nature:checked ~ #content-nature,
-#tab-city:checked ~ #content-city,
-#tab-architecture:checked ~ #content-architecture,
-#tab-portrait:checked ~ #content-portrait {
+#tab-all:checked~#content-all,
+#tab-animals:checked~#content-animals,
+#tab-nature:checked~#content-nature,
+#tab-city:checked~#content-city,
+#tab-architecture:checked~#content-architecture,
+#tab-portrait:checked~#content-portrait {
   display: block;
 }
 
@@ -183,7 +209,7 @@ footer a:hover {
 
 /* Special case for "All" tab */
 #content-all .gallery {
-  column-count: 4; 
+  column-count: 4;
 }
 
 /* Individual photo items */
@@ -231,6 +257,7 @@ footer a:hover {
   .tab-content .gallery {
     column-count: 3;
   }
+
   #content-all .gallery {
     column-count: 4;
   }
@@ -241,6 +268,7 @@ footer a:hover {
   .tab-content .gallery {
     column-count: 2;
   }
+
   #content-all .gallery {
     column-count: 3;
   }
@@ -251,6 +279,7 @@ footer a:hover {
   .tab-content .gallery {
     column-count: 2;
   }
+
   #content-all .gallery {
     column-count: 2;
   }
@@ -279,7 +308,7 @@ footer a:hover {
     flex-direction: row;
     justify-content: space-around;
     padding: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     z-index: 2000;
   }
 
@@ -311,6 +340,7 @@ footer a:hover {
 
 /* Very small screens */
 @media (max-width: 400px) {
+
   .tab-content .gallery,
   #content-all .gallery {
     column-count: 1;
@@ -337,13 +367,17 @@ footer a:hover {
 }
 
 .photo-full {
-  width: auto;               /* Let width adjust naturally */
-  max-width: 100%;           /* Ensure it never overflows viewport width */
-  max-height: 100vh;         /* Fit vertically inside the viewport */
+  width: auto;
+  /* Let width adjust naturally */
+  max-width: 100%;
+  /* Ensure it never overflows viewport width */
+  max-height: 100vh;
+  /* Fit vertically inside the viewport */
   border-radius: 10px;
   display: block;
   margin: 20px auto;
-  object-fit: contain;       /* Maintain aspect ratio and fit inside box */
+  object-fit: contain;
+  /* Maintain aspect ratio and fit inside box */
 }
 
 .photo-desc {
@@ -363,22 +397,22 @@ footer a:hover {
 
 /* Back button styling */
 .back-link {
-    display: inline-block; 
-    text-align: center;
-    margin: 30px auto;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .back-link:hover {
-    background-color: #555;
-    transform: translateY(-2px);
-    text-decoration: none;
+  background-color: #555;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .photo-license {
@@ -389,7 +423,8 @@ footer a:hover {
 }
 
 .photo-license a {
-  color: #6cb2eb; /* light blue link */
+  color: #6cb2eb;
+  /* light blue link */
   text-decoration: none;
 }
 
